@@ -1,3 +1,7 @@
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
 
   /*Задача 1
@@ -13,7 +17,20 @@ public class Main {
 "Многоквартирном доме": для частного дома выводите на экран: "Вы снесли частный дом";
 для многоквартирного дома выведите на экран: "Вы снесли многоквартирный дом. %d подъездов!"
 Вместо %d должно быть число подъездов.*/
-  public static void main(String[] args) {
-    System.out.println("Hello world!");
+  public static void main(String[] args) throws IOException {
+    List<House> listHouse = new ArrayList<>();
+    House house = new PrivateHouse("Bergweg 1");
+    listHouse.add(house);
+    house = new PrivateHouse("Bergweg 2");
+    listHouse.add(house);
+    house = new ApartmentHouse("Bergweg 3", 12);
+    listHouse.add(house);
+
+
+    for (House houses : listHouse) {
+      System.out.println(houses);
+      house.destroy();
+    }
+
   }
 }

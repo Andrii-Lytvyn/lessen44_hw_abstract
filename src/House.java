@@ -3,9 +3,9 @@
 //    Напишите для адреса сеттер и геттер.
 public abstract class House {
   String address;
-  public House(String address)
-  {
-    this.address=address;
+
+  public House(String address) {
+    this.address = address;
   }
 
   public void setAddress(String address) {
@@ -14,5 +14,9 @@ public abstract class House {
 
   public String getAddress() {
     return address;
+  }
+
+  public void destroy() {
+
   }
 }
